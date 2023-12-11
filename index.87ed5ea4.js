@@ -1,2 +1,0 @@
-!function(){var e=document.querySelector('input[name="searchQuery"]'),t=document.querySelector(".search-form");document.querySelector("button").addEventListener("click",(function(){var t=e.value;localStorage.setItem("info",JSON.stringify(t)),console.log(localStorage.getItem("info"))}));var o=localStorage.getItem("info");console.log(o),t.addEventListener("submit",(function(e){e.preventDefault(),t.reset(),localStorage.removeItem("info")}))}();
-//# sourceMappingURL=index.87ed5ea4.js.map

@@ -1,2 +1,0 @@
-const e=document.querySelector('input[name="searchQuery"]'),t=document.querySelector(".search-form");document.querySelector("button").addEventListener("click",(function(){const t=e.value;localStorage.setItem("info",JSON.stringify(t)),console.log(localStorage.getItem("info"))}));const o=localStorage.getItem("info");console.log(o),t.addEventListener("submit",(e=>{e.preventDefault(),t.reset(),localStorage.removeItem("info")}));
-//# sourceMappingURL=index.a0acaef4.js.map
