@@ -1,4 +1,4 @@
-.is-hidden {
+button.is-hidden {
   display: none;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .search-form button {
-  padding: 5px 15px;
+  padding: 11px 50px;
   border: none;
   border-radius: 5px;
   background-color: #20c910;
@@ -37,6 +37,25 @@ body {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease-in-out;
+}
+
+.search-form button:hover,
+.search-form button:focus {
+  background-color: #116117;
+}
+.search-form input[type='text'] {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-form input[type='text']:focus {
+  border-color: #116117; /* Колір обводки при фокусі */
 }
 .gallery {
   display: grid;
@@ -50,7 +69,12 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 }
-
+.photo-card img {
+  width: 100%; /* Set the width to 100% to make it responsive within the container */
+  height: 200px; /* Set the desired height */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}
 .photo-card:hover {
   transform: scale(1.05);
 }
@@ -84,7 +108,7 @@ img {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #3498db;
+  background-color: #20c910;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -93,5 +117,5 @@ img {
 }
 
 .load-more:hover {
-  background-color: #2980b9;
+  background-color: #116117;
 }
