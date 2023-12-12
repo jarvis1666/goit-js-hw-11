@@ -1,0 +1,97 @@
+.is-hidden {
+  display: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to right,
+    #ffc3a0,
+    #ffafbd,
+    #c9d6ff,
+    #a0c4ff,
+    #97f7d7
+  );
+}
+
+.search-form {
+  text-align: center;
+  margin: 20px 0;
+  padding: 30px 15px;
+  border: none;
+  background-color: #8a2be2;
+  color: #fff;
+
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-form button {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #20c910;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.photo-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+}
+
+.gallery_link {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info-item {
+  margin: 0;
+  color: #555;
+  width: 48%; /* Each item takes up 48% of the container width to leave some space between them */
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.load-more:hover {
+  background-color: #2980b9;
+}
