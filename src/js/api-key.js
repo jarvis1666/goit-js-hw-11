@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://pixabay.com/api';
-const API_KEY = '41101875-48e4e18d626284da52e103f42';
+const API_KEY = '41195760-52c8d9d10a5236187cb5e2e09';
 
 export async function serviceMovie(q, page, perPage) {
   try {
