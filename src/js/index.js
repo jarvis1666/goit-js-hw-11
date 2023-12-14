@@ -1,6 +1,14 @@
 import Notiflix from 'notiflix';
 import { serviceMovie } from './api-key';
 import { createMarkup } from './create';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+  captionPosition: 'bottom',
+});
 
 export const variables = {
   searchForm: document.querySelector('.search-form'),
@@ -35,12 +43,25 @@ function handleFormSubmit(event) {
   event.currentTarget.reset();
 }
 
-function handleScroll() {
+export function handleScroll(data) {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-  if (scrollTop + clientHeight >= scrollHeight - 100 && !isLoading) {
+  if (scrollTop + clientHeight >= scrollHeight - 1 && !isLoading) {
     loadImages();
   }
+  console.log('page * perPage', page * perPage);
+  console.log('data.total', data.total);
+  console.log('data.totalHits', data.totalHits);
+  if (page * perPage >= data.totalHits) {
+    removeScrollListener();
+    Notiflix.Notify.info(
+      "We're sorry, but you've reached the end of search results"
+    );
+  }
+}
+
+function removeScrollListener() {
+  window.removeEventListener('scroll', handleScroll);
 }
 
 async function loadImages() {
@@ -62,11 +83,7 @@ async function loadImages() {
       }
       createMarkup(resSearch);
     }
-
-    if (data.totalHits > page * perPage) {
-    } else {
-    }
-
+    lightbox.refresh();
     page += 1;
   } catch (error) {
     onFetchError();

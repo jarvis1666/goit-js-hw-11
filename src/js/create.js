@@ -1,6 +1,4 @@
 import { variables } from './index';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-import SimpleLightbox from 'simplelightbox';
 
 export function createMarkup(resSearch) {
   const array = resSearch.map(
@@ -14,7 +12,7 @@ export function createMarkup(resSearch) {
       downloads,
     }) => {
       return `<div class="photo-card">
-      <a class="gallery_link" href="${largeImageURL}">
+      <a class="gallery_link" href="${largeImageURL}" data-lightbox="gallery">
       <img src="${webformatURL}" alt="${tags}" loading="lazy" />
       </a>
       <div class="info"><p class="info-item">
@@ -34,10 +32,4 @@ export function createMarkup(resSearch) {
     }
   );
   variables.gallery.insertAdjacentHTML('beforeend', array.join(''));
-
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-    captionPosition: 'bottom',
-  });
 }
