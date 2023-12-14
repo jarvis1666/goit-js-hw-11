@@ -49,9 +49,9 @@ export function handleScroll(data) {
   if (scrollTop + clientHeight >= scrollHeight - 1 && !isLoading) {
     loadImages();
   }
-  console.log('page * perPage', page * perPage);
-  console.log('data.total', data.total);
-  console.log('data.totalHits', data.totalHits);
+  // console.log('page * perPage', page * perPage);
+  // console.log('data.total', data.total);
+  // console.log('data.totalHits', data.totalHits);
   if (page * perPage >= data.totalHits) {
     removeScrollListener();
     Notiflix.Notify.info(
@@ -95,13 +95,13 @@ async function loadImages() {
 function onFetchError() {
   Notiflix.Notify.failure('Oops! Something went wrong. Please, try again.');
 }
+// щось не дуже сподобалось
+// function scrollPage() {
+//   const { height: cardHeight } =
+//     variables.gallery.firstElementChild.getBoundingClientRect();
 
-function scrollPage() {
-  const { height: cardHeight } =
-    variables.gallery.firstElementChild.getBoundingClientRect();
-
-  window.scrollBy({
-    top: cardHeight * 2,
-    behavior: 'smooth',
-  });
-}
+//   window.scrollBy({
+//     top: cardHeight * 2,
+//     behavior: 'smooth',
+//   });
+// }
